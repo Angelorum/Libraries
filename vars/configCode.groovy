@@ -10,7 +10,7 @@
 def call(String workspace, String buildNumber){
     dir(workspace){
         say.debug("Enter function configCode on ${workspace}")
-        def ruta = "${env.workspace}/${workspace}/"
+        def ruta = "${env.workspace}/${workspace}"
         def configFile = "${ruta}/app/build.gradle"
         def signingFile = "${ruta}/app/storeFile.jks"
         def keyAlias
