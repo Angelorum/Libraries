@@ -10,7 +10,6 @@
 def call(String workspace, variants, String app){
     say.debug("Enter function deployFirebase")
     config(workspace, app)
-    installFastlane(workspace)
     variants.each{
         deploy(workspace,it)
     }
