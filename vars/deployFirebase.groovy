@@ -54,9 +54,15 @@ def installFastlane(String workspace){
     dir(workspace){
         say.debug("Enter function installFastlane in workspace: ${workspace}")
         sh  """ 
-            apt-get update -y
-            apt-get install ruby libgmp-dev libc6-dev build-essential dh-autoreconf ruby-dev -y
+            apt update -y
+            apt install ruby libgmp-dev libc6-dev build-essential dh-autoreconf ruby-dev -y
             gem install fastlane
+            bundle update
+            mkdir -p /opt/firebase
+            wget -o /opt/firebase/firebase_tools https://firebase.tools/bin/linux/latest
+            chmod +x /opt/firebase/firebase_tools
+            echo \"PATH=\$PATH:/opt/firebase/bin\" >> ~/.bashrc
+            source ~/.bashrc
             """
         say.debug("End of installFastlane")
     }
