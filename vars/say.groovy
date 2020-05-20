@@ -1,10 +1,10 @@
 #!/usr/bin/env groovy
 /**
- * say.groovy
+ *
+ *  say.groovy
  *  Example of jenkins function
- *  use call(message)
- *  or
- *  call.simple(message)
+ *  use say(message) or say.simple(message)
+ *
  */
 
 def call(String message = "Default"){
@@ -13,4 +13,10 @@ def call(String message = "Default"){
 
 def simple(String message = "Default"){
     echo message
+}
+
+def debug(String message = "Default"){
+    if (params.DEBUG){
+        echo message
+    }
 }
