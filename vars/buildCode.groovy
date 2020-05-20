@@ -41,7 +41,7 @@ def build(variant = "debug"){
 def makeAPK(variant = "debug"){
     say.debug("Make APK of ${variant} variant")
     sh  """
-        ./gradlew build${variant}
+        ./gradlew assemble${variant}
         """
     say.debug("Finish make APK ${variant} variant")
 }
