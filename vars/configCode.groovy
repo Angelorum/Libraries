@@ -30,7 +30,7 @@ def call(String workspace, String buildNumber){
             keyPasswd = "$key"
             storePasswd = "$store"
             say.debug("Add signing file: ${signingFile}")
-            sh "cp ${file} ${signingFile}"
+            sh "sudo cp ${file} ${signingFile}"
         }
         say.debug("Start edit config file: ${configFile}")
         editFile(configFile, "VERSIONCODE", buildNumber)
