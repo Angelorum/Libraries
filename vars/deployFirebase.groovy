@@ -34,6 +34,7 @@ def config(String workspace, String app){
         }
         editFile(pathFile, "TOKEN", token)
         editFile(pathFile, "APP_ID", appID)
+        editFile(pathFile, "VARIANT", app)
     }
 }
 
