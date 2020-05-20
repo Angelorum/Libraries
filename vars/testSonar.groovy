@@ -13,7 +13,7 @@ def call(String workspace, String projectKey) {
         def url
         def login
         say.debug("Start sonarque environment with credentials sonarqube_token")
-        withSonarQubeEnv(credentialsId: 'sonarqube_token') {
+        withSonarQubeEnv(credentialsId: 'sonarqube_token_local') {
             say.debug("Get parameters of server")
             withCredentials([
                     string(credentialsId: 'URL_SONAR',
